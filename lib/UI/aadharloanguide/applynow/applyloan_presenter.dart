@@ -15,15 +15,7 @@ class ApplyLoanPresenter {
   doApplyLoan() {
     api.getApplyLoanData()
         .then((ApplyLoanResponse applyLoanResponse) {
-    //  if (applyLoanResponse.status == 200) {
         _view.onSuccess(applyLoanResponse);
-     // }else if(applyLoanResponse.status == 400)
-        /*{
-          _view.onError(applyLoanResponse.message,user.status);
-        }
-      else {
-        _view.onError(user.message,user.status);
-      }*/
     }).catchError((Object error) => _view.onError("error"));
   }
 }
