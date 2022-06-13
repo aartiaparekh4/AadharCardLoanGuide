@@ -1,8 +1,13 @@
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/adharloanguide_page.dart';
+import 'package:aadhar_card_loan_guide/UI/aadharloanguide/applynow/apply_details_page.dart';
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/applynow/applynow_page.dart';
+import 'package:aadhar_card_loan_guide/UI/aadharloanguide/banklist/bank_details_page.dart';
+import 'package:aadhar_card_loan_guide/UI/aadharloanguide/banklist/banklist_page.dart';
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/loanType/loantype_page.dart';
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/loanguide_page/loanguide_page.dart';
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/typeofloan/typeloan_page.dart';
+import 'package:aadhar_card_loan_guide/UI/aadharloanguide/typeofloan/typeofloan_details_page.dart';
+import 'package:aadhar_card_loan_guide/models/apply_loan_response.dart';
 import 'package:flutter/material.dart';
 
 import '../../UI/home_page/home_page.dart';
@@ -10,9 +15,7 @@ import '../../UI/welcome_page/welcome_page.dart';
 import 'routes.dart';
 
 Route<Object>? generateRoute(RouteSettings settings) {
-  debugPrint('\n=============== >> Navigating to: ${settings.name}\n');
   final args = settings.arguments;
-
   switch (settings.name) {
     case Routes.root:
       return _buildRoute(settings: settings, screen: const WelcomePage());
@@ -28,6 +31,16 @@ Route<Object>? generateRoute(RouteSettings settings) {
        return _buildRoute(settings: settings, screen: LoanGuidePage());
     case Routes.loanTypepage:
       return _buildRoute(settings: settings, screen: LoanTypePage());
+     case Routes.applyDetailsPage:
+       final args = settings.arguments as ApplyDetailsPage;
+      return _buildRoute(settings: settings, screen: ApplyDetailsPage(title: args.title,answer:args.answer));
+   case Routes.bankListPage:
+      return _buildRoute(settings: settings, screen: BankListPage());
+  case Routes.bankDetailsPage:
+      return _buildRoute(settings: settings, screen: BankDetailsPage());
+ case Routes.typeofLoanDetailsPage:
+   final args = settings.arguments as TypeofLoanDetailsPage;
+      return _buildRoute(settings: settings, screen: TypeofLoanDetailsPage(description: args.description,));
     default:
       return _errorRoute();
   }

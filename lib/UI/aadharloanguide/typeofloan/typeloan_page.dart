@@ -1,4 +1,7 @@
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/loanType/typeofloan_presenter.dart';
+import 'package:aadhar_card_loan_guide/UI/aadharloanguide/typeofloan/typeofloan_details_page.dart';
+import 'package:aadhar_card_loan_guide/Utils/navigation/navigation_service.dart';
+import 'package:aadhar_card_loan_guide/Utils/navigation/routes.dart';
 import 'package:aadhar_card_loan_guide/Utils/utils.dart';
 import 'package:aadhar_card_loan_guide/models/typeof_loan_response.dart';
 import 'package:flutter/material.dart';
@@ -38,7 +41,9 @@ class LoanTypePageState extends State<TypeLoanPage>  implements TypeofLoanInterf
                     shrinkWrap: true,
                     itemBuilder: (BuildContext context, int index) {
                       return GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          NavigationService.push(Routes.typeofLoanDetailsPage,arguments: TypeofLoanDetailsPage(description:loanTypeLists[index].description.toString()));
+                        },
                         child:Utils.containerViewWidget(title: loanTypeLists[index].name.toString(), context: context, align: TextAlign.start)
                       );
                     }))

@@ -47,6 +47,8 @@ class LoanTypePageState extends State<LoanGuidePage>  implements LoanGuideInterf
                               color:HexColor("#F7F7F7"),
                             ),
                             child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Text(loanguideLists[index].question.toString(),textAlign:TextAlign.start,style: TextStyle(color: Colors.black, fontSize: 14),),
                               ],

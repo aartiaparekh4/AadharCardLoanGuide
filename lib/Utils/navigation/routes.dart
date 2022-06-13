@@ -6,4 +6,8 @@ class Routes {
   static const String typeLoanPage = '/typeLoanPage';
   static const String loanguidepage = '/loanGuidePage';
   static const String loanTypepage = '/loanTypePage';
+  static const String applyDetailsPage = '/applyDetailsPage';
+  static const String bankListPage = '/BankListPage';
+  static const String bankDetailsPage = '/BankDetailsPage';
+  static const String typeofLoanDetailsPage = '/TypeofLoanDetailsPage';
 }

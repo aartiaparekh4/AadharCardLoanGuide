@@ -20,13 +20,13 @@ class AdharLoanGuidePage extends StatelessWidget {
                 onTap: (){
                   NavigationService.push(Routes.applyNowPage);
                 },
-                  child: Utils.containerWidget(title: "Apply Now",context:context,align: TextAlign.center)),
+                  child: Utils.containerWidget(title: "Apply Now",context:context,align: TextAlign.center,isCheck: false)),
               Gap(20),
               GestureDetector(
                 onTap: (){
                   NavigationService.push(Routes.typeLoanPage);
                 },
-                  child: Utils.containerWidget(title: "Type of Loan",context:context,align: TextAlign.center))
+                  child: Utils.containerWidget(title: "Type of Loan",context:context,align: TextAlign.center,isCheck: false))
         ],),
       ),
     );

@@ -1,4 +1,7 @@
+import 'package:aadhar_card_loan_guide/UI/aadharloanguide/applynow/apply_details_page.dart';
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/applynow/applyloan_presenter.dart';
+import 'package:aadhar_card_loan_guide/Utils/navigation/navigation_service.dart';
+import 'package:aadhar_card_loan_guide/Utils/navigation/routes.dart';
 import 'package:aadhar_card_loan_guide/Utils/utils.dart';
 import 'package:aadhar_card_loan_guide/models/apply_loan_response.dart';
 import 'package:flutter/material.dart';
@@ -41,8 +44,9 @@ class ApplyNowPageState extends State<ApplyNowPage> implements ApplyLoanInterfac
                     itemBuilder: (BuildContext context, int index) {
                       return GestureDetector(
                         onTap: () {
+                          NavigationService.push(Routes.applyDetailsPage,arguments: ApplyDetailsPage(title: applyLists[index].question.toString(), answer:applyLists[index].answer.toString()));
                         },
-                        child:  Utils.containerWidget(title: applyLists[index].question.toString(),context:context,align: TextAlign.start),
+                        child:  Utils.containerWidget(title: applyLists[index].question.toString(),context:context,align: TextAlign.start,isCheck: false),
                       );
                     }))
               ],),
@@ -64,7 +68,8 @@ class ApplyNowPageState extends State<ApplyNowPage> implements ApplyLoanInterfac
   onSuccess(ApplyLoanResponse applyLoanResponse) {
     setState(() {
       isLoading = false;
+      applyLists.addAll(applyLoanResponse.data!!);
     });
-    applyLists.addAll(applyLoanResponse.data!!);
+
   }
 }

@@ -50,7 +50,7 @@ class Utils {
       ],
     );
   }
-  static  Widget containerWidget({required String title,required BuildContext context,required TextAlign align} ){
+  static  Widget containerWidget({required String title,required BuildContext context,required TextAlign align,required bool isCheck} ){
     return  Container(
       width: MediaQuery.of(context).size.width,
       margin: const EdgeInsets.only(left: 32,right: 32,bottom: 12),
@@ -64,14 +64,14 @@ class Utils {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            width: MediaQuery.of(context).size.width/1.7,
+            width: isCheck==false?MediaQuery.of(context).size.width/1.4:MediaQuery.of(context).size.width/1.8,
             padding: EdgeInsets.only(top: 12,bottom: 12,left: 22,right: 22),
               decoration: BoxDecoration(
                 color:HexColor("#60B357"),
               ),
               child: Text(title,textAlign:align,style: TextStyle(color: Colors.white, fontSize: 12),)),
                Gap(32),
-              Utils.imageView(image: "assets/images/aadhar_icon.png",width: 48,height: 48),
+              isCheck==true?Utils.imageView(image: "assets/images/aadhar_icon.png",width: 48,height: 48):Container(),
 
         ],
       ),
@@ -120,6 +120,35 @@ class Utils {
       ),
     );
   }
+
+  static  Widget containerWithImageWidget({required String title,required BuildContext context,required TextAlign align,String?  image} ){
+    return  Container(
+      width: MediaQuery.of(context).size.width,
+      margin: const EdgeInsets.only(left: 32,right: 32,bottom: 12),
+      padding: const EdgeInsets.all(6.0),
+      decoration: BoxDecoration(
+        border: Border.all(color: HexColor("#60B357")),
+        borderRadius: BorderRadius.circular(6),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+              width: MediaQuery.of(context).size.width/1.8,
+              padding: EdgeInsets.only(top: 12,bottom: 12,left: 22,right: 22),
+              decoration: BoxDecoration(
+                color:HexColor("#60B357"),
+              ),
+              child: Text(title,textAlign:align,style: TextStyle(color: Colors.white, fontSize: 12),)),
+          Gap(32),
+          Utils.networkimageView(image: image!!,width: 48,height: 48),
+
+        ],
+      ),
+    );
+  }
+
   static Widget progressDialog(BuildContext context, bool isLoading) {
     return Visibility(
         visible: isLoading,
