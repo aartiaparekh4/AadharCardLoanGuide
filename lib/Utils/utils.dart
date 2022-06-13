@@ -67,7 +67,7 @@ class Utils {
       margin: const EdgeInsets.only(left: 32, right: 32, bottom: 12),
       padding: const EdgeInsets.all(6.0),
       decoration: BoxDecoration(
-        border: Border.all(color: HexColor("#60B357")),
+        border: Border.all(color: HexColor("#52B4F8")),
         borderRadius: BorderRadius.circular(6),
       ),
       child: Row(
@@ -78,14 +78,14 @@ class Utils {
               width: isCheck == false ? MediaQuery.of(context).size.width / 1.4 : MediaQuery.of(context).size.width / 1.8,
               padding: EdgeInsets.only(top: 12, bottom: 12, left: 22, right: 22),
               decoration: BoxDecoration(
-                color: HexColor("#60B357"),
+                color: HexColor("#52B4F8"),
               ),
               child: Text(
                 title,
                 textAlign: align,
                 style: TextStyle(color: Colors.white, fontSize: 12),
               )),
-          Gap(32),
+         Gap(isCheck == true ? 32 : 0) ,
           isCheck == true ? Utils.imageView(image: "assets/images/aadhar_icon.png", width: 48, height: 48) : Container(),
         ],
       ),
@@ -129,7 +129,7 @@ class Utils {
       margin: const EdgeInsets.only(left: 32, right: 32, bottom: 12),
       padding: const EdgeInsets.all(6.0),
       decoration: BoxDecoration(
-        border: Border.all(color: HexColor("#60B357")),
+        border: Border.all(color: HexColor("#52B4F8")),
         borderRadius: BorderRadius.circular(6),
       ),
       child: Row(
@@ -140,7 +140,7 @@ class Utils {
               width: MediaQuery.of(context).size.width / 2,
               padding: EdgeInsets.only(top: 12, bottom: 12, left: 22, right: 22),
               decoration: BoxDecoration(
-                color: HexColor("#60B357"),
+                color: HexColor("#52B4F8"),
               ),
               child: Column(
                 children: [
@@ -163,7 +163,7 @@ class Utils {
               height: 70,
               padding: EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: HexColor("#60B357"),
+                color: HexColor("#52B4F8"),
                 border: Border.all(color: HexColor("#000000")),
                 borderRadius: BorderRadius.circular(6),
               ),
@@ -183,7 +183,7 @@ class Utils {
       margin: const EdgeInsets.only(left: 32, right: 32, bottom: 12),
       padding: const EdgeInsets.all(6.0),
       decoration: BoxDecoration(
-        border: Border.all(color: HexColor("#60B357")),
+        border: Border.all(color: HexColor("#52B4F8")),
         borderRadius: BorderRadius.circular(6),
       ),
       child: Row(
@@ -194,7 +194,7 @@ class Utils {
               width: MediaQuery.of(context).size.width / 1.8,
               padding: EdgeInsets.only(top: 12, bottom: 12, left: 22, right: 22),
               decoration: BoxDecoration(
-                color: HexColor("#60B357"),
+                color: HexColor("#52B4F8"),
               ),
               child: Text(
                 title,

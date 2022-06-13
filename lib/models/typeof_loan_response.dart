@@ -33,7 +33,7 @@ class DataTypeloan {
     id = json['id'];
     name = json['name'];
     image = json['image'];
-    description = json['description'];
+    description = json['description']!.replaceAll("<p>", "").replaceAll("</p>", "");
   }
 
   Map<String, dynamic> toJson() {
