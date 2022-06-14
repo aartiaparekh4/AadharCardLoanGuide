@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/bankholiday_page/bankholiday_presenter.dart';
 import 'package:aadhar_card_loan_guide/Utils/utils.dart';
 import 'package:aadhar_card_loan_guide/models/bank_holiday_response.dart';
@@ -36,7 +38,7 @@ class BankHolidayPageState extends State<BankHolidayPage> implements BankHoliday
             Column(
               children: [
                 Utils.customAppBar(color: HexColor("#60B357"), text: "AADHAR LOAN", textColor: Colors.black, context: context),
-                Gap(22),
+                const Gap(22),
                 Expanded(
                     child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 12),

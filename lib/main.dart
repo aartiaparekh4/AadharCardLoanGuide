@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors_in_immutables, avoid_print
+
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/devicefcm_page/bankinfo_presenter.dart';
 import 'package:aadhar_card_loan_guide/models/device_fcm_response.dart';
 import 'package:aadhar_card_loan_guide/models/notificationModel.dart';

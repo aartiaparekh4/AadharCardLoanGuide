@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/loanType/loantype_details_page.dart';
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/loanType/typeofloan_presenter.dart';
 import 'package:aadhar_card_loan_guide/Utils/navigation/navigation_service.dart';
@@ -35,7 +37,7 @@ class LoanTypePageState extends State<LoanTypePage>  implements TypeofLoanInterf
             Column(
             children: [
               Utils.customAppBar(color: HexColor("#60B357"),text: "AADHARCARD LOAN",textColor: Colors.black,context: context),
-              Gap(22),
+              const Gap(22),
               Expanded(child:ListView.builder(
                   itemCount: loanTypeLists.length,
                   shrinkWrap: true,
@@ -55,7 +57,7 @@ class LoanTypePageState extends State<LoanTypePage>  implements TypeofLoanInterf
                           child: Row(
                             children: [
                               Utils.networkimageView(image: loanTypeLists[index].image.toString(),width: 35,height: 35),
-                              Gap(12),
+                              const Gap(12),
                               Text(loanTypeLists[index].name.toString(),textAlign:TextAlign.start,style: const TextStyle(color: Colors.white, fontSize: 18),),
                             ],
                           )),
@@ -80,7 +82,7 @@ class LoanTypePageState extends State<LoanTypePage>  implements TypeofLoanInterf
   onSuccess(TypeOfLoanResponse typeOfLoanResponse) {
     setState(() {
       isLoading = false;
-      loanTypeLists.addAll(typeOfLoanResponse.data!!);
+      loanTypeLists.addAll(typeOfLoanResponse.data!);
     });
   }
 }

@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_final_fields
+
 import 'package:aadhar_card_loan_guide/Utils/rest_ds.dart';
 import 'package:aadhar_card_loan_guide/models/device_fcm_response.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
@@ -9,7 +11,7 @@ abstract class DeviceFcmInterface {
 
 class DeviceFcmPresenter {
   DeviceFcmInterface _view;
-  RestDatasource api = new RestDatasource();
+  RestDatasource api =  RestDatasource();
 
   DeviceFcmPresenter(this._view);
 

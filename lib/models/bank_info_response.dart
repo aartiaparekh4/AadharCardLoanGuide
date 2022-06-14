@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 class BankInfoResponse {
   List<BankInfoData>? data;
 
@@ -7,13 +9,13 @@ class BankInfoResponse {
     if (json['data'] != null) {
       data = <BankInfoData>[];
       json['data'].forEach((v) {
-        data!.add(new BankInfoData.fromJson(v));
+        data!.add(BankInfoData.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     if (this.data != null) {
       data['data'] = this.data!.map((v) => v.toJson()).toList();
     }
@@ -46,13 +48,13 @@ class BankInfoData {
 
   Map<String, dynamic> toJson() {
     try {
-      final Map<String, dynamic> data = new Map<String, dynamic>();
-      data['id'] = this.id;
-      data['name'] = this.name;
-      data['image'] = this.image;
-      data['balance'] = this.balance;
-      data['statement'] = this.statement;
-      data['customer_care_number'] = this.customerCareNumber;
+      final Map<String, dynamic> data = <String, dynamic>{};
+      data['id'] = id;
+      data['name'] = name;
+      data['image'] = image;
+      data['balance'] = balance;
+      data['statement'] = statement;
+      data['customer_care_number'] = customerCareNumber;
 
       return data;
     } catch (e) {

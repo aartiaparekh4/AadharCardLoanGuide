@@ -15,13 +15,13 @@ class AdharLoanGuidePage extends StatelessWidget {
         child: Column(
           children: [
             Utils.customAppBar(color: HexColor("#60B357"), text: "AADHARCARD LOAN GUIDE", textColor: Colors.black, context: context),
-            Gap(120),
+          const  Gap(120),
             GestureDetector(
                 onTap: () {
                   NavigationService.push(Routes.applyNowPage);
                 },
                 child: Utils.containerWidget1(title: "Apply Now", context: context, align: TextAlign.center, isCheck: false)),
-            Gap(20),
+           const Gap(20),
             GestureDetector(
                 onTap: () {
                   NavigationService.push(Routes.typeLoanPage);

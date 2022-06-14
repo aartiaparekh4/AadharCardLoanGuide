@@ -1,3 +1,5 @@
+// ignore_for_file: sized_box_for_whitespace
+
 import 'package:aadhar_card_loan_guide/Utils/utils.dart';
 import 'package:flutter/material.dart';
 

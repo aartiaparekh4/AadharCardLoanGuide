@@ -7,13 +7,13 @@ class ApplyLoanResponse {
     if (json['data'] != null) {
       data = <ApplyData>[];
       json['data'].forEach((v) {
-        data!.add(new ApplyData.fromJson(v));
+        data!.add( ApplyData.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data =  <String, dynamic>{};
     if (this.data != null) {
       data['data'] = this.data!.map((v) => v.toJson()).toList();
     }
@@ -31,14 +31,14 @@ class ApplyData {
   ApplyData.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     question = json['question'];
-    answer = json['answer']!.replaceAll("<p>", "").replaceAll("</p>", "");
+    answer = json['answer'];
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['question'] = this.question;
-    data['answer'] = this.answer;
+    final Map<String, dynamic> data =  <String, dynamic>{};
+    data['id'] = id;
+    data['question'] = question;
+    data['answer'] = answer;
     return data;
   }
 }

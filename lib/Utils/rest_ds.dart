@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_new, prefer_const_declarations, non_constant_identifier_names, prefer_final_fields
+
 import 'package:aadhar_card_loan_guide/models/apply_loan_response.dart';
 import 'package:aadhar_card_loan_guide/models/bank_holiday_response.dart';
 import 'package:aadhar_card_loan_guide/models/bank_info_response.dart';
@@ -10,7 +12,7 @@ import 'package:aadhar_card_loan_guide/models/typeof_loan_response.dart';
 import 'network_util.dart';
 
 class RestDatasource {
-  NetworkUtil _netUtil = new NetworkUtil();
+  NetworkUtil _netUtil =  NetworkUtil();
   static final BASE_URL = "https://aadhar-card-loan-guide.herokuapp.com/";
 
   static final APPLY_NOW_URL = BASE_URL + "api/aadhar-card-loan-guide-view";

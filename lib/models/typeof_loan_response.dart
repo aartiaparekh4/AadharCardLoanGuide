@@ -7,13 +7,13 @@ class TypeOfLoanResponse {
     if (json['data'] != null) {
       data = <DataTypeloan>[];
       json['data'].forEach((v) {
-        data!.add(new DataTypeloan.fromJson(v));
+        data!.add( DataTypeloan.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     if (this.data != null) {
       data['data'] = this.data!.map((v) => v.toJson()).toList();
     }
@@ -33,15 +33,15 @@ class DataTypeloan {
     id = json['id'];
     name = json['name'];
     image = json['image'];
-    description = json['description']!.replaceAll("<p>", "").replaceAll("</p>", "");
+    description = json['description'];
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['name'] = this.name;
-    data['image'] = this.image;
-    data['description'] = this.description;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['name'] = name;
+    data['image'] = image;
+    data['description'] = description;
     return data;
   }
 }

@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/banklist/banklist_presenter.dart';
 import 'package:aadhar_card_loan_guide/Utils/navigation/navigation_service.dart';
 import 'package:aadhar_card_loan_guide/Utils/navigation/routes.dart';
@@ -36,7 +38,7 @@ class BankListPageState extends State<BankListPage> implements BankListInterface
             Column(
               children: [
                 Utils.customAppBar(color: HexColor("#60B357"),text: "BANK LIST",textColor: Colors.black,context: context),
-                 Gap(22),
+                const Gap(22),
                 Container(
                     margin: const EdgeInsets.only(left: 32,right: 32),
                     width: MediaQuery.of(context).size.width/2.5,
@@ -50,7 +52,7 @@ class BankListPageState extends State<BankListPage> implements BankListInterface
                         Expanded(child: Text("Select Option",textAlign:TextAlign.center,style: TextStyle(color: Colors.black, fontSize: 14),)),
                       ],
                     )),
-                Gap(16),
+               const Gap(16),
                 Expanded(child:ListView.builder(
                     itemCount: bankLists.length,
                     shrinkWrap: true,
@@ -81,7 +83,7 @@ class BankListPageState extends State<BankListPage> implements BankListInterface
   onSuccess(BankListResponse bankListResponse) {
     setState(() {
       isLoading = false;
-      bankLists.addAll(bankListResponse.data!!);
+      bankLists.addAll(bankListResponse.data!);
     });
 
   }

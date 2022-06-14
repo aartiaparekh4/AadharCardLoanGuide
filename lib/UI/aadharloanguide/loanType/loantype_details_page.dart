@@ -1,6 +1,9 @@
+// ignore_for_file: must_be_immutable, use_key_in_widget_constructors
+
 import 'package:aadhar_card_loan_guide/Utils/utils.dart';
 import 'package:aadhar_card_loan_guide/models/typeof_loan_response.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:gap/gap.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -62,12 +65,13 @@ class LoanTypeDetailsPageState extends State<LoanTypeDetailsPage> {
                     ),
                     child: Row(
                       children: [
-                        Expanded(
-                            child: Text(
-                          widget.dataTypeloan.description!,
-                          textAlign: TextAlign.justify,
-                          style: const TextStyle(color: Colors.black, fontSize: 14),
-                        )),
+                        Expanded(child: Html(data: widget.dataTypeloan.description!)
+                            //     Text(
+                            //   widget.dataTypeloan.description!,
+                            //   textAlign: TextAlign.justify,
+                            //   style: const TextStyle(color: Colors.black, fontSize: 14),
+                            // )
+                            ),
                       ],
                     ))
               ],

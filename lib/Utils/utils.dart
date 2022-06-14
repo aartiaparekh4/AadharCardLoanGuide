@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -76,14 +75,14 @@ class Utils {
         children: [
           Container(
               width: isCheck == false ? MediaQuery.of(context).size.width / 1.4 : MediaQuery.of(context).size.width / 1.8,
-              padding: EdgeInsets.only(top: 12, bottom: 12, left: 22, right: 22),
+              padding: const EdgeInsets.only(top: 12, bottom: 12, left: 22, right: 22),
               decoration: BoxDecoration(
                 color: HexColor("#52B4F8"),
               ),
               child: Text(
                 title,
                 textAlign: align,
-                style: TextStyle(color: Colors.white, fontSize: 12),
+                style: const TextStyle(color: Colors.white, fontSize: 12),
               )),
          Gap(isCheck == true ? 32 : 0) ,
           isCheck == true ? Utils.imageView(image: "assets/images/aadhar_icon.png", width: 48, height: 48) : Container(),
@@ -107,14 +106,14 @@ class Utils {
         children: [
           Container(
               width: isCheck == false ? MediaQuery.of(context).size.width / 1.4 : MediaQuery.of(context).size.width / 1.8,
-              padding: EdgeInsets.only(top: 12, bottom: 12, left: 22, right: 22),
+              padding: const EdgeInsets.only(top: 12, bottom: 12, left: 22, right: 22),
               decoration: BoxDecoration(
                 color: HexColor("#52B4F8"),
               ),
               child: Text(
                 title,
                 textAlign: align,
-                style: TextStyle(color: Colors.white, fontSize: 12),
+                style: const TextStyle(color: Colors.white, fontSize: 12),
               )),
           Gap(isCheck == true ? 32 : 0),
           isCheck == true ? Utils.imageView(image: "assets/images/aadhar_icon.png", width: 48, height: 48) : Container(),
@@ -138,7 +137,7 @@ class Utils {
         children: [
           Container(
               width: MediaQuery.of(context).size.width / 2,
-              padding: EdgeInsets.only(top: 12, bottom: 12, left: 22, right: 22),
+              padding: const  EdgeInsets.only(top: 12, bottom: 12, left: 22, right: 22),
               decoration: BoxDecoration(
                 color: HexColor("#52B4F8"),
               ),
@@ -147,27 +146,27 @@ class Utils {
                   Text(
                     title,
                     textAlign: align,
-                    style: TextStyle(color: Colors.white, fontSize: 14),
+                    style: const TextStyle(color: Colors.white, fontSize: 14),
                   ),
-                  Gap(4),
+                  const Gap(4),
                   Text(
                     "What is " + title + "?",
                     textAlign: align,
-                    style: TextStyle(color: Colors.white, fontSize: 12),
+                    style: const TextStyle(color: Colors.white, fontSize: 12),
                   ),
                 ],
               )),
-          Gap(32),
+        const  Gap(32),
           Container(
               width: 70,
               height: 70,
-              padding: EdgeInsets.all(12),
+              padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
                 color: HexColor("#52B4F8"),
                 border: Border.all(color: HexColor("#000000")),
                 borderRadius: BorderRadius.circular(6),
               ),
-              child: Text(
+              child: const Text(
                 "Get More\nDetails",
                 textAlign: TextAlign.center,
                 style: TextStyle(color: Colors.white, fontSize: 10),
@@ -192,17 +191,17 @@ class Utils {
         children: [
           Container(
               width: MediaQuery.of(context).size.width / 1.8,
-              padding: EdgeInsets.only(top: 12, bottom: 12, left: 22, right: 22),
+              padding: const EdgeInsets.only(top: 12, bottom: 12, left: 22, right: 22),
               decoration: BoxDecoration(
                 color: HexColor("#52B4F8"),
               ),
               child: Text(
                 title,
                 textAlign: align,
-                style: TextStyle(color: Colors.white, fontSize: 12),
+                style: const TextStyle(color: Colors.white, fontSize: 12),
               )),
-          Gap(32),
-          Utils.networkimageView(image: image!!, width: 48, height: 48),
+          const Gap(32),
+          Utils.networkimageView(image: image!, width: 48, height: 48),
         ],
       ),
     );
@@ -212,10 +211,10 @@ class Utils {
     return Visibility(
         visible: isLoading,
         child: Container(
-          color: Color.fromRGBO(0, 0, 0, 0.4),
+          color: const Color.fromRGBO(0, 0, 0, 0.4),
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
-          child: CircularProgressIndicator(
+          child: const CircularProgressIndicator(
             valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
           ),
           alignment: Alignment.center,

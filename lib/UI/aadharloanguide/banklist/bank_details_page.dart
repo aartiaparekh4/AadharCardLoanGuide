@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:aadhar_card_loan_guide/Utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -26,7 +28,7 @@ class BankDetailsPageState extends State<BankDetailsPage>{
             Column(children: [
               Utils.customAppBar(color: HexColor("#60B357"),text: "APPLY",textColor: Colors.black,context: context),
               Container(
-                margin: EdgeInsets.only(left: 22,right: 22),
+                margin: const EdgeInsets.only(left: 22,right: 22),
                 child: Column(
                   children: const [
                     Gap(22),

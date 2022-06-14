@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/applynow/apply_details_page.dart';
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/applynow/applyloan_presenter.dart';
 import 'package:aadhar_card_loan_guide/Utils/navigation/navigation_service.dart';
@@ -37,7 +39,7 @@ class ApplyNowPageState extends State<ApplyNowPage> implements ApplyLoanInterfac
             Column(
               children: [
                 Utils.customAppBar(color: HexColor("#60B357"),text: "AADHARCARD LOAN GUIDE",textColor: Colors.black,context: context),
-                 Gap(22),
+               const  Gap(22),
                 Expanded(child:ListView.builder(
                     itemCount: applyLists.length,
                     shrinkWrap: true,
@@ -68,7 +70,7 @@ class ApplyNowPageState extends State<ApplyNowPage> implements ApplyLoanInterfac
   onSuccess(ApplyLoanResponse applyLoanResponse) {
     setState(() {
       isLoading = false;
-      applyLists.addAll(applyLoanResponse.data!!);
+      applyLists.addAll(applyLoanResponse.data!);
     });
 
   }

@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_final_fields
+
 import 'package:aadhar_card_loan_guide/Utils/rest_ds.dart';
 import 'package:aadhar_card_loan_guide/models/loan_guide_response.dart';
 
@@ -8,7 +10,7 @@ abstract class LoanGuideInterface {
 
 class LoanGuidePresenter {
   LoanGuideInterface _view;
-  RestDatasource api = new RestDatasource();
+  RestDatasource api =  RestDatasource();
 
   LoanGuidePresenter(this._view);
 

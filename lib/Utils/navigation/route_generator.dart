@@ -1,3 +1,5 @@
+// ignore_for_file: unused_element
+
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/adharloanguide_page.dart';
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/applynow/apply_details_page.dart';
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/applynow/applynow_page.dart';
@@ -10,6 +12,7 @@ import 'package:aadhar_card_loan_guide/UI/aadharloanguide/epfservice_page/epfser
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/epfservice_page/epfservice_page.dart';
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/loanType/loantype_details_page.dart';
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/loanType/loantype_page.dart';
+import 'package:aadhar_card_loan_guide/UI/aadharloanguide/loanguide_page/loanguide_details_page.dart';
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/loanguide_page/loanguide_page.dart';
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/typeofloan/typeloan_page.dart';
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/typeofloan/typeofloan_details_page.dart';
@@ -20,7 +23,7 @@ import '../../UI/welcome_page/welcome_page.dart';
 import 'routes.dart';
 
 Route<Object>? generateRoute(RouteSettings settings) {
-  final args = settings.arguments;
+  // final args = settings.arguments;
   switch (settings.name) {
     case Routes.root:
       return _buildRoute(settings: settings, screen: const WelcomePage());
@@ -76,6 +79,13 @@ Route<Object>? generateRoute(RouteSettings settings) {
           settings: settings,
           screen: EPFServiceDetailsPage(
             ePFServiceData: args.ePFServiceData,
+          ));
+    case Routes.loanguidedetailspage:
+      final args = settings.arguments as LoanGuideDetailsPage;
+      return _buildRoute(
+          settings: settings,
+          screen: LoanGuideDetailsPage(
+            guideData: args.guideData,
           ));
     default:
       return _errorRoute();

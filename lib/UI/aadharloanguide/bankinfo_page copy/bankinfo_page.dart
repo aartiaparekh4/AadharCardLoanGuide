@@ -39,7 +39,7 @@ class BankInfoPageState extends State<BankInfoPage> implements BankInfoInterface
             Column(
               children: [
                 Utils.customAppBar(color: HexColor("#60B357"), text: "AADHAR LOAN", textColor: Colors.black, context: context),
-               const Gap(22),
+                const Gap(22),
                 Expanded(
                     child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 12),
@@ -50,11 +50,8 @@ class BankInfoPageState extends State<BankInfoPage> implements BankInfoInterface
                         return Padding(
                           padding: const EdgeInsets.only(bottom: 8),
                           child: GestureDetector(
-                            onTap: () async {
+                            onTap: () {
                                NavigationService.push(Routes.bankDetailPage, arguments: BankDetailPage(bankInfoData: bankInfoDataLists[index],));
-                              // DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
-                              // AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
-                              // print("object");
                             },
                             child: Stack(
                               alignment: Alignment.centerLeft,

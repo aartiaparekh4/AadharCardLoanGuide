@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 class BankHolidayResponse {
   List<BankHolidayData>? data;
 
@@ -7,13 +9,13 @@ class BankHolidayResponse {
     if (json['data'] != null) {
       data = <BankHolidayData>[];
       json['data'].forEach((v) {
-        data!.add(new BankHolidayData.fromJson(v));
+        data!.add(BankHolidayData.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     if (this.data != null) {
       data['data'] = this.data!.map((v) => v.toJson()).toList();
     }
@@ -44,12 +46,12 @@ class BankHolidayData {
 
   Map<String, dynamic> toJson() {
     try {
-      final Map<String, dynamic> data = new Map<String, dynamic>();
-      data['id'] = this.id;
-      data['state'] = this.state;
-      data['date'] = this.date!.toIso8601String();
-      data['day'] = this.day;
-      data['day'] = this.day;
+      final Map<String, dynamic> data = <String, dynamic>{};
+      data['id'] = id;
+      data['state'] = state;
+      data['date'] = date!.toIso8601String();
+      data['day'] = day;
+      data['day'] = day;
       return data;
     } catch (e) {
       print("Exception: BankHolidayData.toJson(): ${e.toString()}");

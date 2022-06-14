@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors_in_immutables
+
 import 'package:aadhar_card_loan_guide/Utils/utils.dart';
 import 'package:aadhar_card_loan_guide/models/bank_info_response.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +30,7 @@ class BankDetailPageState extends State<BankDetailPage> {
             Column(
               children: [
                 Utils.customAppBar(color: HexColor("#60B357"), text: widget.bankInfoData.name!.toUpperCase(), textColor: Colors.black, context: context),
-                Gap(22),
+               const Gap(22),
                 Expanded(
                     child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 12),

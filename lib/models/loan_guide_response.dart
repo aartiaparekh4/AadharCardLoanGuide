@@ -7,13 +7,13 @@ class LoanGuideResponse {
     if (json['data'] != null) {
       data = <GuideData>[];
       json['data'].forEach((v) {
-        data!.add(new GuideData.fromJson(v));
+        data!.add( GuideData.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data =  <String, dynamic>{};
     if (this.data != null) {
       data['data'] = this.data!.map((v) => v.toJson()).toList();
     }
@@ -35,10 +35,10 @@ class GuideData {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['question'] = this.question;
-    data['answer'] = this.answer;
+    final Map<String, dynamic> data =  <String, dynamic>{};
+    data['id'] = id;
+    data['question'] = question;
+    data['answer'] = answer;
     return data;
   }
 }

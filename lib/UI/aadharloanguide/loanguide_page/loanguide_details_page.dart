@@ -1,20 +1,20 @@
 // ignore_for_file: must_be_immutable, use_key_in_widget_constructors
 
 import 'package:aadhar_card_loan_guide/Utils/utils.dart';
-import 'package:aadhar_card_loan_guide/models/epf_service_response.dart';
+import 'package:aadhar_card_loan_guide/models/loan_guide_response.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_html/flutter_html.dart';
 import 'package:gap/gap.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:flutter_html/flutter_html.dart';
 
-class EPFServiceDetailsPage extends StatefulWidget {
-  EPFServiceData ePFServiceData;
-  EPFServiceDetailsPage({required this.ePFServiceData});
+class LoanGuideDetailsPage extends StatefulWidget {
+  GuideData guideData;
+  LoanGuideDetailsPage({required this.guideData});
   @override
-  State<StatefulWidget> createState() => EPFServicDetailsPageState();
+  State<StatefulWidget> createState() => LoanGuideDetailsPageState();
 }
 
-class EPFServicDetailsPageState extends State<EPFServiceDetailsPage> {
+class LoanGuideDetailsPageState extends State<LoanGuideDetailsPage> {
   @override
   void initState() {
     super.initState();
@@ -48,7 +48,7 @@ class EPFServicDetailsPageState extends State<EPFServiceDetailsPage> {
                                 child: Padding(
                               padding: const EdgeInsets.only(left: 24),
                               child: Text(
-                                widget.ePFServiceData.question!,
+                                widget.guideData.question!,
                                 textAlign: TextAlign.center,
                                 style: const TextStyle(color: Colors.black, fontSize: 14),
                               ),
@@ -59,22 +59,14 @@ class EPFServicDetailsPageState extends State<EPFServiceDetailsPage> {
                     Container(
                         margin: const EdgeInsets.only(left: 32, right: 32),
                         width: MediaQuery.of(context).size.width,
-                        height: (MediaQuery.of(context).size.height * 75) / 100,
+                        height: (MediaQuery.of(context).size.height * 73) / 100,
                         padding: const EdgeInsets.only(top: 12, bottom: 12, left: 22, right: 22),
                         decoration: BoxDecoration(
                           color: HexColor("#F7F7F7"),
                           borderRadius: BorderRadius.circular(6),
                         ),
                         child: SingleChildScrollView(
-                          child: 
-                          
-                          Html(data: widget.ePFServiceData.answer!)
-                          
-                          // Text(
-                          //   widget.ePFServiceData.answer!,
-                          //   textAlign: TextAlign.justify,
-                          //   style: const TextStyle(color: Colors.black, fontSize: 14),
-                          // ),
+                          child: Html(data: widget.guideData.answer!),
                         ))
                   ],
                 )

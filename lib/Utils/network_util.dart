@@ -1,13 +1,15 @@
+// ignore_for_file: prefer_final_fields, prefer_const_constructors, unnecessary_null_comparison
+
 import 'dart:async';
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 class NetworkUtil {
   //Next three lines makes this class a Singleton
-  static NetworkUtil _instance = new NetworkUtil.internal();
+  static NetworkUtil _instance =  NetworkUtil.internal();
   NetworkUtil.internal();
   factory NetworkUtil() => _instance;
-  final JsonDecoder _decoder = new JsonDecoder();
+  final JsonDecoder _decoder =  JsonDecoder();
 
 
   Future<dynamic> get(String url, Map<String, String> headers) {
