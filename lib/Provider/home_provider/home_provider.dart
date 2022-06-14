@@ -36,15 +36,15 @@ class HomeProvider with ChangeNotifier {
       image: AppImages.bankInfo,
       backgroundColor: AppColors.orange2,
     ),
-    GridViewitemModel(
-      title: 'Cash Counter',
-      image: AppImages.cashCounter,
-      backgroundColor: AppColors.blue,
-    ),
-    GridViewitemModel(
-      title: 'Near By',
-      image: AppImages.nearBy,
-      backgroundColor: AppColors.yellow,
-    ),
+    // GridViewitemModel(
+    //   title: 'Cash Counter',
+    //   image: AppImages.cashCounter,
+    //   backgroundColor: AppColors.blue,
+    // ),
+    // GridViewitemModel(
+    //   title: 'Near By',
+    //   image: AppImages.nearBy,
+    //   backgroundColor: AppColors.yellow,
+    // ),
   ];
 }
