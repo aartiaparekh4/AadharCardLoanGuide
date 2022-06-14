@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../Utils/app_colors.dart';
 import '../../Utils/app_constant/app_images.dart';
 
 class WelcomePageButton extends StatelessWidget {

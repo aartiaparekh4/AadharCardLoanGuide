@@ -48,8 +48,11 @@ class BankInfoPageState extends State<BankInfoPage> implements BankInfoInterface
                         return Padding(
                           padding: const EdgeInsets.only(bottom: 8),
                           child: GestureDetector(
-                            onTap: () {
+                            onTap: () async {
                                NavigationService.push(Routes.bankDetailPage, arguments: BankDetailPage(bankInfoData: bankInfoDataLists[index],));
+                              // DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
+                              // AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
+                              // print("object");
                             },
                             child: Stack(
                               alignment: Alignment.centerLeft,

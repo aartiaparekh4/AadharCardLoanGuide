@@ -1,9 +1,9 @@
-import 'dart:convert';
 import 'package:aadhar_card_loan_guide/models/apply_loan_response.dart';
 import 'package:aadhar_card_loan_guide/models/bank_holiday_response.dart';
 import 'package:aadhar_card_loan_guide/models/bank_info_response.dart';
 import 'package:aadhar_card_loan_guide/models/banklist_response.dart';
 import 'package:aadhar_card_loan_guide/models/device_fcm_response.dart';
+import 'package:aadhar_card_loan_guide/models/epf_service_response.dart';
 import 'package:aadhar_card_loan_guide/models/loan_guide_response.dart';
 import 'package:aadhar_card_loan_guide/models/typeof_loan_response.dart';
 
@@ -20,6 +20,7 @@ class RestDatasource {
   static final Bank_holiday = BASE_URL + "api/bank-holiday-view";
   static final Bank_info = BASE_URL + "api/bank-list-view";
   static final Device_fcm = BASE_URL + "api/device/fcm/";
+  static final EPF_service = BASE_URL + "api/EPF-Service-view";
 
   //Calling the apply loan API
   Future<ApplyLoanResponse> getApplyLoanData() {
@@ -98,6 +99,16 @@ class RestDatasource {
       {"registration_id": fcmToken, "device_id": "1", "active": "true"}
     ).then((dynamic res) {
       return DeviceFcmResponse.fromJson(res);
+    });
+  }
+
+  //Calling the EPF Service API
+  Future<EPFServiceResponse> getEPFServicesResponse() {
+    return _netUtil.get(
+      EPF_service,
+      {},
+    ).then((dynamic res) {
+      return EPFServiceResponse.fromJson(res);
     });
   }
 }

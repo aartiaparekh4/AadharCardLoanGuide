@@ -14,4 +14,6 @@ class Routes {
   static const String bankInfoPage = '/bankInfoPage';
   static const String bankDetailPage = '/bankDetailPage';
   static const String loanTypeDetailsPage = '/loanTypeDetailsPage';
+  static const String epfServicePage = '/epfServicePage';
+  static const String epfServiceDetailsPage = '/epfServiceDetailsPage';
 }

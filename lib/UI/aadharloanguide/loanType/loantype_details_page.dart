@@ -1,5 +1,3 @@
-import 'package:aadhar_card_loan_guide/Utils/navigation/navigation_service.dart';
-import 'package:aadhar_card_loan_guide/Utils/navigation/routes.dart';
 import 'package:aadhar_card_loan_guide/Utils/utils.dart';
 import 'package:aadhar_card_loan_guide/models/typeof_loan_response.dart';
 import 'package:flutter/material.dart';

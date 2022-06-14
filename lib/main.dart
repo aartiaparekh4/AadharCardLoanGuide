@@ -63,9 +63,9 @@ class _MyAppState extends State<MyApp> implements DeviceFcmInterface {
       NotificationModel _notificationModel = NotificationModel();
 
       if (message.notification != null) {
-        _notificationModel.title = message.notification!.title!;
-        _notificationModel.body = message.notification!.body!;
-        _notificationModel.payLoad = json.encode(message.data);
+        _notificationModel.title = ((message.notification!.title != null) ? message.notification!.title : "")!;
+        _notificationModel.body = ((message.notification!.body != null) ? message.notification!.body : "")! ;
+        _notificationModel.payLoad =  (message.data.isNotEmpty) ? json.encode(message.data) : "";
         scheduleNotification(id, _notificationModel.title, _notificationModel.body, _notificationModel.payLoad);
       }
     } catch (e) {

@@ -2,7 +2,6 @@ import 'package:aadhar_card_loan_guide/Utils/navigation/navigation_service.dart'
 import 'package:aadhar_card_loan_guide/Utils/navigation/routes.dart';
 import 'package:flutter/material.dart';
 
-import '../../../Utils/app_colors.dart';
 import '../../../Utils/app_text_style.dart';
 
 class GriedViewItem extends StatelessWidget {
@@ -21,6 +20,8 @@ class GriedViewItem extends StatelessWidget {
           NavigationService.push(Routes.loanguidepage);
         } else if (onTapIndex == 2) {
           NavigationService.push(Routes.loanTypepage);
+        } else if (onTapIndex == 3) {
+          NavigationService.push(Routes.epfServicePage);
         } else if (onTapIndex == 4) {
           NavigationService.push(Routes.bankHolidayPage);
         } else if (onTapIndex == 5) {

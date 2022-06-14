@@ -1,8 +1,6 @@
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/bankholiday_page/bankholiday_presenter.dart';
-import 'package:aadhar_card_loan_guide/UI/aadharloanguide/loanType/typeofloan_presenter.dart';
 import 'package:aadhar_card_loan_guide/Utils/utils.dart';
 import 'package:aadhar_card_loan_guide/models/bank_holiday_response.dart';
-import 'package:aadhar_card_loan_guide/models/typeof_loan_response.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hexcolor/hexcolor.dart';

@@ -1,10 +1,7 @@
-import 'package:aadhar_card_loan_guide/UI/aadharloanguide/applynow/apply_details_page.dart';
-import 'package:aadhar_card_loan_guide/UI/aadharloanguide/applynow/applyloan_presenter.dart';
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/banklist/banklist_presenter.dart';
 import 'package:aadhar_card_loan_guide/Utils/navigation/navigation_service.dart';
 import 'package:aadhar_card_loan_guide/Utils/navigation/routes.dart';
 import 'package:aadhar_card_loan_guide/Utils/utils.dart';
-import 'package:aadhar_card_loan_guide/models/apply_loan_response.dart';
 import 'package:aadhar_card_loan_guide/models/banklist_response.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';

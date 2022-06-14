@@ -1,4 +1,3 @@
-import 'package:aadhar_card_loan_guide/UI/aadharloanguide/bankinfo_page/bankdetail_page.dart';
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/loanType/loantype_details_page.dart';
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/loanType/typeofloan_presenter.dart';
 import 'package:aadhar_card_loan_guide/Utils/navigation/navigation_service.dart';

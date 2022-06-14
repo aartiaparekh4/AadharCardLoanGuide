@@ -1,6 +1,4 @@
-import 'package:aadhar_card_loan_guide/Utils/app_constant/app_icons.dart';
 import 'package:aadhar_card_loan_guide/Utils/utils.dart';
-import 'package:aadhar_card_loan_guide/Utils/widgets/app_image.dart';
 import 'package:aadhar_card_loan_guide/models/bank_info_response.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';

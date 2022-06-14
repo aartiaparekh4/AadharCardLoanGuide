@@ -6,12 +6,13 @@ import 'package:aadhar_card_loan_guide/UI/aadharloanguide/bankinfo_page/bankdeta
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/bankinfo_page/bankinfo_page.dart';
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/banklist/bank_details_page.dart';
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/banklist/banklist_page.dart';
+import 'package:aadhar_card_loan_guide/UI/aadharloanguide/epfservice_page/epfservice_details_page.dart';
+import 'package:aadhar_card_loan_guide/UI/aadharloanguide/epfservice_page/epfservice_page.dart';
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/loanType/loantype_details_page.dart';
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/loanType/loantype_page.dart';
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/loanguide_page/loanguide_page.dart';
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/typeofloan/typeloan_page.dart';
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/typeofloan/typeofloan_details_page.dart';
-import 'package:aadhar_card_loan_guide/models/apply_loan_response.dart';
 import 'package:flutter/material.dart';
 
 import '../../UI/home_page/home_page.dart';
@@ -66,6 +67,15 @@ Route<Object>? generateRoute(RouteSettings settings) {
           settings: settings,
           screen: LoanTypeDetailsPage(
             dataTypeloan: args.dataTypeloan,
+          ));
+    case Routes.epfServicePage:
+      return _buildRoute(settings: settings, screen: EPFServicePage());
+    case Routes.epfServiceDetailsPage:
+      final args = settings.arguments as EPFServiceDetailsPage;
+      return _buildRoute(
+          settings: settings,
+          screen: EPFServiceDetailsPage(
+            ePFServiceData: args.ePFServiceData,
           ));
     default:
       return _errorRoute();
