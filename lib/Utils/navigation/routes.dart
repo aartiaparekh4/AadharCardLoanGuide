@@ -13,4 +13,5 @@ class Routes {
   static const String bankHolidayPage = '/bankHolidayPage';
   static const String bankInfoPage = '/bankInfoPage';
   static const String bankDetailPage = '/bankDetailPage';
+  static const String loanTypeDetailsPage = '/loanTypeDetailsPage';
 }

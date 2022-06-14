@@ -6,6 +6,7 @@ import 'package:aadhar_card_loan_guide/UI/aadharloanguide/bankinfo_page/bankdeta
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/bankinfo_page/bankinfo_page.dart';
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/banklist/bank_details_page.dart';
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/banklist/banklist_page.dart';
+import 'package:aadhar_card_loan_guide/UI/aadharloanguide/loanType/loantype_details_page.dart';
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/loanType/loantype_page.dart';
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/loanguide_page/loanguide_page.dart';
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/typeofloan/typeloan_page.dart';
@@ -58,6 +59,13 @@ Route<Object>? generateRoute(RouteSettings settings) {
           settings: settings,
           screen: BankDetailPage(
             bankInfoData: args.bankInfoData,
+          ));
+    case Routes.loanTypeDetailsPage:
+      final args = settings.arguments as LoanTypeDetailsPage;
+      return _buildRoute(
+          settings: settings,
+          screen: LoanTypeDetailsPage(
+            dataTypeloan: args.dataTypeloan,
           ));
     default:
       return _errorRoute();
