@@ -3,6 +3,7 @@ import 'package:aadhar_card_loan_guide/models/apply_loan_response.dart';
 import 'package:aadhar_card_loan_guide/models/bank_holiday_response.dart';
 import 'package:aadhar_card_loan_guide/models/bank_info_response.dart';
 import 'package:aadhar_card_loan_guide/models/banklist_response.dart';
+import 'package:aadhar_card_loan_guide/models/device_fcm_response.dart';
 import 'package:aadhar_card_loan_guide/models/loan_guide_response.dart';
 import 'package:aadhar_card_loan_guide/models/typeof_loan_response.dart';
 
@@ -18,6 +19,7 @@ class RestDatasource {
   static final BANK_LIST_URL = BASE_URL + "api/bank-list-view";
   static final Bank_holiday = BASE_URL + "api/bank-holiday-view";
   static final Bank_info = BASE_URL + "api/bank-list-view";
+  static final Device_fcm = BASE_URL + "api/device/fcm/";
 
   //Calling the apply loan API
   Future<ApplyLoanResponse> getApplyLoanData() {
@@ -86,6 +88,16 @@ class RestDatasource {
       {},
     ).then((dynamic res) {
       return BankInfoResponse.fromJson(res);
+    });
+  }
+
+  //Calling the device fcm API
+  Future<DeviceFcmResponse> getDeviceFcmResponse(String fcmToken) {
+    return _netUtil.post(
+      Device_fcm,
+      {"registration_id": fcmToken, "device_id": "1", "active": "true"}
+    ).then((dynamic res) {
+      return DeviceFcmResponse.fromJson(res);
     });
   }
 }

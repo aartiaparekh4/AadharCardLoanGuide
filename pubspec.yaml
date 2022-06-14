@@ -41,6 +41,9 @@ dependencies:
   gap: ^2.0.0
   intl: ^0.17.0
   font_awesome_flutter: ^10.1.0
+  flutter_local_notifications: ^9.6.0
+  firebase_messaging: ^11.4.1
+  firebase_core: ^1.17.1
 dev_dependencies:
   flutter_test:
     sdk: flutter

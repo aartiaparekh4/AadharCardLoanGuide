@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "663259430763",
+    "project_id": "aadhar-card-loan-guide-2000",
+    "storage_bucket": "aadhar-card-loan-guide-2000.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:663259430763:android:6ea1cd6b2e7ae15237562e",
+        "android_client_info": {
+          "package_name": "com.example.aadhar_card_loan_guide"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "663259430763-884c765o5kcffvosejk39i9obsnds830.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIA0QHrPUWrZmxYR-c8SSwgYMz7FN50I0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "663259430763-884c765o5kcffvosejk39i9obsnds830.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

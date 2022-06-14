@@ -38,4 +38,20 @@ class NetworkUtil {
   }
 
 
+
+   Future<dynamic> post(String url, Map<String, String> body) {
+    return http.post(Uri.parse(url), body: body).then((http.Response response) {
+      final String res = response.body;
+      final int statusCode = response.statusCode;
+
+      if (statusCode == 203 ||
+          statusCode == 201 ||
+          statusCode == 400 ||
+          json == null) {
+      }
+      return _decoder.convert(res);
+    });
+  }
+
+
 }
