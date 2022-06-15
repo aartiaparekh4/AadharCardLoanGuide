@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors_in_immutables
+
 import 'package:aadhar_card_loan_guide/Utils/navigation/navigation_service.dart';
 import 'package:aadhar_card_loan_guide/Utils/navigation/routes.dart';
 import 'package:aadhar_card_loan_guide/Utils/utils.dart';

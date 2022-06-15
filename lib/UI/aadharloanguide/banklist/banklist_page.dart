@@ -1,5 +1,6 @@
 // ignore_for_file: use_key_in_widget_constructors
 
+import 'package:aadhar_card_loan_guide/UI/aadharloanguide/banklist/bank_details_page.dart';
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/banklist/banklist_presenter.dart';
 import 'package:aadhar_card_loan_guide/Utils/navigation/navigation_service.dart';
 import 'package:aadhar_card_loan_guide/Utils/navigation/routes.dart';
@@ -76,7 +77,10 @@ class BankListPageState extends State<BankListPage> implements BankListInterface
                             return GestureDetector(
                               onTap: () {
                                 RewardAd temp = RewardAd(onClose: () {
-                                  NavigationService.push(Routes.bankDetailsPage);
+                                  NavigationService.push(Routes.bankDetailsPage,
+                                      arguments: BankDetailsPage(
+                                        bankListData: bankLists[index],
+                                      ));
                                 });
                                 temp.initAd();
                               },

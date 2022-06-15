@@ -28,7 +28,7 @@ class _BannerAdState extends State<BannerAd> {
 
   void initAd() {
     try {
-      bannerSize = widget.isBanner ? AdmobBannerSize.BANNER : AdmobBannerSize(width: 300, height: 200, name: 'CUSTOM');
+      bannerSize = widget.isBanner ? AdmobBannerSize.BANNER : const AdmobBannerSize(width: 300, height: 200, name: 'CUSTOM');
       admobBanner = AdmobBanner(
         adUnitId: AppAdMob.bannerUnitKey,
         listener: (AdmobAdEvent event, Map<String, dynamic>? args) {

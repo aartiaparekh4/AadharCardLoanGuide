@@ -26,11 +26,11 @@ Route<Object>? generateRoute(RouteSettings settings) {
   // final args = settings.arguments;
   switch (settings.name) {
     case Routes.root:
-      return _buildRoute(settings: settings, screen:  WelcomePage());
+      return _buildRoute(settings: settings, screen: WelcomePage());
     case Routes.home:
-      return _buildRoute(settings: settings, screen:  HomePage());
+      return _buildRoute(settings: settings, screen: HomePage());
     case Routes.adharloanguide:
-      return _buildRoute(settings: settings, screen:  AdharLoanGuidePage());
+      return _buildRoute(settings: settings, screen: AdharLoanGuidePage());
     case Routes.applyNowPage:
       return _buildRoute(settings: settings, screen: ApplyNowPage());
     case Routes.typeLoanPage:
@@ -45,7 +45,8 @@ Route<Object>? generateRoute(RouteSettings settings) {
     case Routes.bankListPage:
       return _buildRoute(settings: settings, screen: BankListPage());
     case Routes.bankDetailsPage:
-      return _buildRoute(settings: settings, screen: BankDetailsPage());
+      final args = settings.arguments as BankDetailsPage;
+      return _buildRoute(settings: settings, screen: BankDetailsPage(bankListData: args.bankListData,));
     case Routes.typeofLoanDetailsPage:
       final args = settings.arguments as TypeofLoanDetailsPage;
       return _buildRoute(

@@ -1,14 +1,16 @@
-// ignore_for_file: use_key_in_widget_constructors
+// ignore_for_file: use_key_in_widget_constructors, must_be_immutable
 
 import 'package:aadhar_card_loan_guide/Utils/utils.dart';
 import 'package:aadhar_card_loan_guide/Utils/widgets/banner_ad.dart';
+import 'package:aadhar_card_loan_guide/models/banklist_response.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:clipboard/clipboard.dart';
 
 class BankDetailsPage extends StatefulWidget {
-  /*String title;
-  BankDetailsPage({required this.title});*/
+  BankListData bankListData;
+  BankDetailsPage({required this.bankListData});
   @override
   State<StatefulWidget> createState() => BankDetailsPageState();
 }
@@ -75,7 +77,11 @@ class BankDetailsPageState extends State<BankDetailsPage> {
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      FlutterClipboard.copy(widget.bankListData.loanUrl!).then((value) {
+                        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Link Copied")));
+                      });
+                    },
                     child: Container(
                         margin: const EdgeInsets.only(left: 32, right: 32),
                         width: MediaQuery.of(context).size.width / 2.5,

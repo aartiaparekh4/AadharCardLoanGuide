@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_print, use_key_in_widget_constructors
+// ignore_for_file: avoid_print, use_key_in_widget_constructors, prefer_const_constructors_in_immutables
 
 import 'package:aadhar_card_loan_guide/Utils/widgets/banner_ad.dart';
 import 'package:aadhar_card_loan_guide/Utils/widgets/reward_ad.dart';
@@ -45,34 +45,34 @@ class _WelcomePageState extends State<WelcomePage> {
                   ),
                   const VerticalSpace(20),
                   const Spacer(),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Expanded(
-                        child: WelcomePageButton(
-                          icon: AppImages.happyIcon,
-                          backgroundColor: AppColors.themeColor3,
-                          onPressed: () {},
-                        ),
-                      ),
-                      const HorizontalSpace(20),
-                      Expanded(
-                        child: WelcomePageButton(
-                          icon: AppImages.shareIcon,
-                          backgroundColor: AppColors.orange.withOpacity(0.8),
-                          onPressed: () {},
-                        ),
-                      ),
-                      const HorizontalSpace(20),
-                      Expanded(
-                        child: WelcomePageButton(
-                          backgroundColor: AppColors.green2,
-                          icon: AppImages.keyIcon,
-                          onPressed: () {},
-                        ),
-                      ),
-                    ],
-                  ),
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  //   children: [
+                  //     Expanded(
+                  //       child: WelcomePageButton(
+                  //         icon: AppImages.happyIcon,
+                  //         backgroundColor: AppColors.themeColor3,
+                  //         onPressed: () {},
+                  //       ),
+                  //     ),
+                  //     const HorizontalSpace(20),
+                  //     Expanded(
+                  //       child: WelcomePageButton(
+                  //         icon: AppImages.shareIcon,
+                  //         backgroundColor: AppColors.orange.withOpacity(0.8),
+                  //         onPressed: () {},
+                  //       ),
+                  //     ),
+                  //     const HorizontalSpace(20),
+                  //     Expanded(
+                  //       child: WelcomePageButton(
+                  //         backgroundColor: AppColors.green2,
+                  //         icon: AppImages.keyIcon,
+                  //         onPressed: () {},
+                  //       ),
+                  //     ),
+                  //   ],
+                  // ),
                   const VerticalSpace(20),
                   CustomButton(
                     text: "Let's Start",
