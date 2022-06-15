@@ -1,5 +1,6 @@
 import 'package:aadhar_card_loan_guide/Utils/navigation/navigation_service.dart';
 import 'package:aadhar_card_loan_guide/Utils/navigation/routes.dart';
+import 'package:aadhar_card_loan_guide/Utils/widgets/reward_ad.dart';
 import 'package:flutter/material.dart';
 
 import '../../../Utils/app_text_style.dart';
@@ -16,6 +17,7 @@ class GriedViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        RewardAd temp = RewardAd(onClose: () {
         if (onTapIndex == 1) {
           NavigationService.push(Routes.loanguidepage);
         } else if (onTapIndex == 2) {
@@ -27,6 +29,8 @@ class GriedViewItem extends StatelessWidget {
         } else if (onTapIndex == 5) {
           NavigationService.push(Routes.bankInfoPage);
         }
+        });
+        temp.initAd();
       },
       child: Container(
         height: MediaQuery.of(context).size.width / 3.2,

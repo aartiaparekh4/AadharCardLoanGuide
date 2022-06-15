@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable, use_key_in_widget_constructors
 
 import 'package:aadhar_card_loan_guide/Utils/utils.dart';
+import 'package:aadhar_card_loan_guide/Utils/widgets/banner_ad.dart';
 import 'package:aadhar_card_loan_guide/models/typeof_loan_response.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
@@ -15,15 +16,23 @@ class LoanTypeDetailsPage extends StatefulWidget {
 }
 
 class LoanTypeDetailsPageState extends State<LoanTypeDetailsPage> {
+  late BannerAd bottomBannerAd;
+  // late BannerAd topBannerAd;
   @override
   void initState() {
     super.initState();
+    bottomBannerAd = BannerAd();
+
+    // topBannerAd = BannerAd(
+    //   isBanner: false,
+    // );
   }
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Material(
+      child: Scaffold(
+          body: Material(
         color: HexColor("#F2F2F3"),
         child: Stack(
           alignment: Alignment.bottomCenter,
@@ -78,7 +87,7 @@ class LoanTypeDetailsPageState extends State<LoanTypeDetailsPage> {
             ),
           ],
         ),
-      ),
+      ), bottomNavigationBar: bottomBannerAd,),
     );
   }
 }

@@ -15,12 +15,14 @@ import 'package:flutter/material.dart';
 import 'Utils/navigation/navigation_service.dart';
 import 'Utils/navigation/route_generator.dart';
 import 'Utils/navigation/routes.dart';
+import 'package:admob_flutter/admob_flutter.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   // String? token =
   // print("myToken: $token");
+  Admob.initialize(testDeviceIds: ["a5b8feed-ffad-41bf-8681-4abd111341ec"]);
   runApp(MyApp());
 }
 

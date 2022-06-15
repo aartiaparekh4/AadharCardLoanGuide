@@ -2,6 +2,7 @@
 
 import 'package:aadhar_card_loan_guide/UI/aadharloanguide/bankholiday_page/bankholiday_presenter.dart';
 import 'package:aadhar_card_loan_guide/Utils/utils.dart';
+import 'package:aadhar_card_loan_guide/Utils/widgets/banner_ad.dart';
 import 'package:aadhar_card_loan_guide/models/bank_holiday_response.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -18,6 +19,8 @@ class BankHolidayPageState extends State<BankHolidayPage> implements BankHoliday
   List<BankHolidayData> bankHolidayDataLists = [];
   late BankHolidayPresenter bankHolidayPresenter;
   final TextStyle _textStyleDate = const TextStyle(fontSize: 17, color: Color(0XFFBD8763));
+  late BannerAd bottomBannerAd;
+  // late BannerAd topBannerAd;
 
   @override
   void initState() {
@@ -27,72 +30,80 @@ class BankHolidayPageState extends State<BankHolidayPage> implements BankHoliday
       isLoading = true;
     });
     bankHolidayPresenter.doBankHolidayData();
+    bottomBannerAd = BannerAd();
+
+    // topBannerAd = BannerAd(
+    //   isBanner: false,
+    // );
   }
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Material(
-        child: Stack(
-          children: [
-            Column(
-              children: [
-                Utils.customAppBar(color: HexColor("#60B357"), text: "AADHAR LOAN", textColor: Colors.black, context: context),
-                const Gap(22),
-                Expanded(
-                    child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 12),
-                  child: ListView.builder(
-                      itemCount: bankHolidayDataLists.length,
-                      shrinkWrap: true,
-                      itemBuilder: (BuildContext context, int index) {
-                        return Padding(
-                          padding: const EdgeInsets.only(bottom: 8),
-                          child: GestureDetector(
-                            onTap: () {},
-                            child: Container(
-                                padding: const EdgeInsets.all(4),
-                                decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.black),
-                                  borderRadius: const BorderRadius.all(Radius.circular(10)),
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Column(
-                                        children: [
-                                          Text(
-                                            DateFormat("MMMM").format(bankHolidayDataLists[index].date!),
-                                            style: _textStyleDate,
-                                          ),
-                                          Text(
-                                            bankHolidayDataLists[index].date!.day.toString().padLeft(2, "0"),
-                                            style: _textStyleDate,
-                                          ),
-                                          Text(
-                                            bankHolidayDataLists[index].day!,
-                                            style: _textStyleDate,
-                                          ),
-                                        ],
-                                      ),
-                                      SizedBox(
-                                        width: (MediaQuery.of(context).size.width * 57) / 100,
-                                        child: Text(bankHolidayDataLists[index].holiday!, style: const TextStyle(fontSize: 17), textAlign: TextAlign.right),
-                                      ),
-                                    ],
+      child: Scaffold(
+        body: Material(
+          child: Stack(
+            children: [
+              Column(
+                children: [
+                  Utils.customAppBar(color: HexColor("#60B357"), text: "AADHAR LOAN", textColor: Colors.black, context: context),
+                  const Gap(22),
+                  Expanded(
+                      child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 12),
+                    child: ListView.builder(
+                        itemCount: bankHolidayDataLists.length,
+                        shrinkWrap: true,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Padding(
+                            padding: const EdgeInsets.only(bottom: 8),
+                            child: GestureDetector(
+                              onTap: () {},
+                              child: Container(
+                                  padding: const EdgeInsets.all(4),
+                                  decoration: BoxDecoration(
+                                    border: Border.all(color: Colors.black),
+                                    borderRadius: const BorderRadius.all(Radius.circular(10)),
                                   ),
-                                )),
-                          ),
-                        );
-                      }),
-                ))
-              ],
-            ),
-            Utils.progressDialog(context, isLoading)
-          ],
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Column(
+                                          children: [
+                                            Text(
+                                              DateFormat("MMMM").format(bankHolidayDataLists[index].date!),
+                                              style: _textStyleDate,
+                                            ),
+                                            Text(
+                                              bankHolidayDataLists[index].date!.day.toString().padLeft(2, "0"),
+                                              style: _textStyleDate,
+                                            ),
+                                            Text(
+                                              bankHolidayDataLists[index].day!,
+                                              style: _textStyleDate,
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(
+                                          width: (MediaQuery.of(context).size.width * 57) / 100,
+                                          child: Text(bankHolidayDataLists[index].holiday!, style: const TextStyle(fontSize: 17), textAlign: TextAlign.right),
+                                        ),
+                                      ],
+                                    ),
+                                  )),
+                            ),
+                          );
+                        }),
+                  ))
+                ],
+              ),
+              Utils.progressDialog(context, isLoading)
+            ],
+          ),
         ),
+        bottomNavigationBar: bottomBannerAd,
       ),
     );
   }

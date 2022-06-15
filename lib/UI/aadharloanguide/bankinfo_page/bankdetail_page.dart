@@ -1,6 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors_in_immutables
 
 import 'package:aadhar_card_loan_guide/Utils/utils.dart';
+import 'package:aadhar_card_loan_guide/Utils/widgets/banner_ad.dart';
 import 'package:aadhar_card_loan_guide/models/bank_info_response.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -16,21 +17,29 @@ class BankDetailPage extends StatefulWidget {
 }
 
 class BankDetailPageState extends State<BankDetailPage> {
+  late BannerAd bottomBannerAd;
+  // late BannerAd topBannerAd;
   @override
   void initState() {
     super.initState();
+    bottomBannerAd = BannerAd();
+
+    // topBannerAd = BannerAd(
+    //   isBanner: false,
+    // );
   }
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Material(
+      child: Scaffold(
+          body: Material(
         child: Stack(
           children: [
             Column(
               children: [
                 Utils.customAppBar(color: HexColor("#60B357"), text: widget.bankInfoData.name!.toUpperCase(), textColor: Colors.black, context: context),
-               const Gap(22),
+                const Gap(22),
                 Expanded(
                     child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 12),
@@ -246,7 +255,7 @@ class BankDetailPageState extends State<BankDetailPage> {
             ),
           ],
         ),
-      ),
+      ), bottomNavigationBar: bottomBannerAd,),
     );
   }
 }

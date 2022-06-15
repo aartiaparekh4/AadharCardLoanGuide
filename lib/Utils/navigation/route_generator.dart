@@ -26,11 +26,11 @@ Route<Object>? generateRoute(RouteSettings settings) {
   // final args = settings.arguments;
   switch (settings.name) {
     case Routes.root:
-      return _buildRoute(settings: settings, screen: const WelcomePage());
+      return _buildRoute(settings: settings, screen:  WelcomePage());
     case Routes.home:
-      return _buildRoute(settings: settings, screen: const HomePage());
+      return _buildRoute(settings: settings, screen:  HomePage());
     case Routes.adharloanguide:
-      return _buildRoute(settings: settings, screen: const AdharLoanGuidePage());
+      return _buildRoute(settings: settings, screen:  AdharLoanGuidePage());
     case Routes.applyNowPage:
       return _buildRoute(settings: settings, screen: ApplyNowPage());
     case Routes.typeLoanPage:
