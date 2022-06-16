@@ -1,4 +1,4 @@
-package com.example.aadhar_card_loan_guide
+package com.Indian_Instant_Aadhar_Card_Loan_Guide
 
 import io.flutter.embedding.android.FlutterActivity
 

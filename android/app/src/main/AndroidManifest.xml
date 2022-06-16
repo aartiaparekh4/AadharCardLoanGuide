@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.aadhar_card_loan_guide">
+    package="com.Indian_Instant_Aadhar_Card_Loan_Guide">
     <uses-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="Aadhar Card Loan Guide"
