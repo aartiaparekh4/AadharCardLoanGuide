@@ -2,7 +2,7 @@
     package="com.example.aadhar_card_loan_guide">
     <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="aadhar_card_loan_guide"
+        android:label="Aadhar Card Loan Guide"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
