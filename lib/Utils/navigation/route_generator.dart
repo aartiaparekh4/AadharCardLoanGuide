@@ -46,7 +46,11 @@ Route<Object>? generateRoute(RouteSettings settings) {
       return _buildRoute(settings: settings, screen: BankListPage());
     case Routes.bankDetailsPage:
       final args = settings.arguments as BankDetailsPage;
-      return _buildRoute(settings: settings, screen: BankDetailsPage(bankListData: args.bankListData,));
+      return _buildRoute(
+          settings: settings,
+          screen: BankDetailsPage(
+            bankListData: args.bankListData,
+          ));
     case Routes.typeofLoanDetailsPage:
       final args = settings.arguments as TypeofLoanDetailsPage;
       return _buildRoute(
@@ -63,7 +67,7 @@ Route<Object>? generateRoute(RouteSettings settings) {
       return _buildRoute(
           settings: settings,
           screen: BankDetailPage(
-            bankInfoData: args.bankInfoData,
+            bankListData: args.bankListData,
           ));
     case Routes.loanTypeDetailsPage:
       final args = settings.arguments as LoanTypeDetailsPage;

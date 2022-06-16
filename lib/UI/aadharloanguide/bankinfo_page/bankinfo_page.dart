@@ -7,7 +7,7 @@ import 'package:aadhar_card_loan_guide/Utils/navigation/routes.dart';
 import 'package:aadhar_card_loan_guide/Utils/utils.dart';
 import 'package:aadhar_card_loan_guide/Utils/widgets/banner_ad.dart';
 import 'package:aadhar_card_loan_guide/Utils/widgets/reward_ad.dart';
-import 'package:aadhar_card_loan_guide/models/bank_info_response.dart';
+import 'package:aadhar_card_loan_guide/models/banklist_response.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -19,7 +19,7 @@ class BankInfoPage extends StatefulWidget {
 
 class BankInfoPageState extends State<BankInfoPage> implements BankInfoInterface {
   var isLoading = false;
-  List<BankInfoData> bankInfoDataLists = [];
+  List<BankListData> bankListData = [];
   late BankInfoPresenter bankInfoPresenter;
   late BannerAd bottomBannerAd;
   // late BannerAd topBannerAd;
@@ -54,7 +54,7 @@ class BankInfoPageState extends State<BankInfoPage> implements BankInfoInterface
                       child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 12),
                     child: ListView.builder(
-                        itemCount: bankInfoDataLists.length,
+                        itemCount: bankListData.length,
                         shrinkWrap: true,
                         itemBuilder: (BuildContext context, int index) {
                           return Padding(
@@ -64,7 +64,7 @@ class BankInfoPageState extends State<BankInfoPage> implements BankInfoInterface
                                 RewardAd temp = RewardAd(onClose: () {
                                   NavigationService.push(Routes.bankDetailPage,
                                       arguments: BankDetailPage(
-                                        bankInfoData: bankInfoDataLists[index],
+                                        bankListData: bankListData[index],
                                       ));
                                 });
                                 temp.initAd();
@@ -88,7 +88,7 @@ class BankInfoPageState extends State<BankInfoPage> implements BankInfoInterface
                                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                               children: [
                                                 Text(
-                                                  bankInfoDataLists[index].name!,
+                                                  bankListData[index].name!,
                                                   style: const TextStyle(fontSize: 17),
                                                   textAlign: TextAlign.right,
                                                 ),
@@ -104,7 +104,7 @@ class BankInfoPageState extends State<BankInfoPage> implements BankInfoInterface
                                     alignment: Alignment.center,
                                     decoration: const BoxDecoration(color: Color(0XFF01CD90), shape: BoxShape.circle),
                                     child: Text(
-                                      bankInfoDataLists[index].name![0],
+                                      bankListData[index].name![0],
                                       style: const TextStyle(fontSize: 18, color: Colors.white),
                                     ),
                                   )
@@ -133,10 +133,10 @@ class BankInfoPageState extends State<BankInfoPage> implements BankInfoInterface
   }
 
   @override
-  onSuccess(BankInfoResponse bankInfoResponse) {
+  onSuccess(BankListResponse bankListResponse) {
     setState(() {
       isLoading = false;
-      bankInfoDataLists.addAll(bankInfoResponse.data!);
+      bankListData.addAll(bankListResponse.data!);
     });
   }
 }

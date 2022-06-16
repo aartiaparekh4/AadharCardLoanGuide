@@ -2,7 +2,6 @@
 
 import 'package:aadhar_card_loan_guide/models/apply_loan_response.dart';
 import 'package:aadhar_card_loan_guide/models/bank_holiday_response.dart';
-import 'package:aadhar_card_loan_guide/models/bank_info_response.dart';
 import 'package:aadhar_card_loan_guide/models/banklist_response.dart';
 import 'package:aadhar_card_loan_guide/models/device_fcm_response.dart';
 import 'package:aadhar_card_loan_guide/models/epf_service_response.dart';
@@ -20,7 +19,6 @@ class RestDatasource {
   static final loan_guide_view = BASE_URL + "api/loan-guide-view";
   static final BANK_LIST_URL = BASE_URL + "api/bank-list-view";
   static final Bank_holiday = BASE_URL + "api/bank-holiday-view";
-  static final Bank_info = BASE_URL + "api/bank-list-view";
   static final Device_fcm = BASE_URL + "api/device/fcm/";
   static final EPF_service = BASE_URL + "api/EPF-Service-view";
 
@@ -81,16 +79,6 @@ class RestDatasource {
       {},
     ).then((dynamic res) {
       return BankHolidayResponse.fromJson(res);
-    });
-  }
-
-  //Calling the Bank info API
-  Future<BankInfoResponse> getBankInfoResponse() {
-    return _netUtil.get(
-      Bank_info,
-      {},
-    ).then((dynamic res) {
-      return BankInfoResponse.fromJson(res);
     });
   }
 

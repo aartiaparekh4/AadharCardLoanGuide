@@ -12,7 +12,6 @@ import '../../Utils/navigation/routes.dart';
 import '../../Utils/widgets/app_space.dart';
 import '../../Utils/widgets/custom_button.dart';
 import 'titel_widget.dart';
-import 'welcome_page_button.dart';
 
 class WelcomePage extends StatefulWidget {
   WelcomePage() : super();
@@ -83,7 +82,9 @@ class _WelcomePageState extends State<WelcomePage> {
                     height: 50,
                     textStyle: AppTextStyle.styleWhite22W500,
                     onPressed: () {
-                     RewardAd temp = RewardAd(onClose: (){ NavigationService.push(Routes.home);});
+                      RewardAd temp = RewardAd(onClose: () {
+                        NavigationService.push(Routes.home);
+                      });
                       temp.initAd();
                     },
                   ),

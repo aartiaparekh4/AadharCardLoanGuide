@@ -2,16 +2,16 @@
 
 import 'package:aadhar_card_loan_guide/Utils/utils.dart';
 import 'package:aadhar_card_loan_guide/Utils/widgets/banner_ad.dart';
-import 'package:aadhar_card_loan_guide/models/bank_info_response.dart';
+import 'package:aadhar_card_loan_guide/models/banklist_response.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class BankDetailPage extends StatefulWidget {
-  final BankInfoData bankInfoData;
+  final BankListData bankListData;
 
-  BankDetailPage({required this.bankInfoData});
+  BankDetailPage({required this.bankListData});
   @override
   State<StatefulWidget> createState() => BankDetailPageState();
 }
@@ -38,7 +38,7 @@ class BankDetailPageState extends State<BankDetailPage> {
           children: [
             Column(
               children: [
-                Utils.customAppBar(color: HexColor("#60B357"), text: widget.bankInfoData.name!.toUpperCase(), textColor: Colors.black, context: context),
+                Utils.customAppBar(color: HexColor("#60B357"), text: widget.bankListData.name!.toUpperCase(), textColor: Colors.black, context: context),
                 const Gap(22),
                 Expanded(
                     child: Padding(
@@ -85,7 +85,7 @@ class BankDetailPageState extends State<BankDetailPage> {
                                                       Padding(
                                                         padding: const EdgeInsets.only(left: 8.0),
                                                         child: Text(
-                                                          widget.bankInfoData.balance!,
+                                                          widget.bankListData.balance!,
                                                           style: const TextStyle(fontSize: 15),
                                                         ),
                                                       )
@@ -150,7 +150,7 @@ class BankDetailPageState extends State<BankDetailPage> {
                                                         Padding(
                                                           padding: const EdgeInsets.only(left: 8.0),
                                                           child: Text(
-                                                            widget.bankInfoData.statement!,
+                                                            widget.bankListData.statement!,
                                                             style: const TextStyle(fontSize: 15),
                                                           ),
                                                         )
@@ -216,7 +216,7 @@ class BankDetailPageState extends State<BankDetailPage> {
                                                         Padding(
                                                           padding: const EdgeInsets.only(left: 8.0),
                                                           child: Text(
-                                                            widget.bankInfoData.customerCareNumber!,
+                                                            widget.bankListData.customerCareNumber!,
                                                             style: const TextStyle(fontSize: 15),
                                                           ),
                                                         )
